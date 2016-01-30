@@ -9,10 +9,17 @@ public class Hand {
     private ArrayList<Card> hand;
     private int cardCount;
     private int maxCards;
+<<<<<<< HEAD
 
     //public Hand(int MaxCards, Card... hand){
     //}
 
+=======
+/*
+    public Hand(int MaxCards, Card... hand){
+    }
+*/
+>>>>>>> fa67c912e4e4a3d01b1f327cbcfcc02ab7f8e065
     public ArrayList<Card> getHand() {
         return hand;
     }
