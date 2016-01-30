@@ -9,10 +9,10 @@ public class Hand {
     private ArrayList<Card> hand;
     private int cardCount;
     private int maxCards;
-
+/*
     public Hand(int MaxCards, Card... hand){
     }
-
+*/
     public ArrayList<Card> getHand() {
         return hand;
     }
