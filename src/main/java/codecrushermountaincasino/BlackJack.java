@@ -10,11 +10,11 @@ public class BlackJack extends CardGame{
 
     public BlackJack(Player player) {
         super(player);
-        playerHand = new Hand();
-        computerHand = new Hand();
+        playerHand = new Hand(5);
+        computerHand = new Hand(5);
         continueGame = true;
     }
-
+/*
     public void playBlackJack() {
 
     }
@@ -33,5 +33,5 @@ public class BlackJack extends CardGame{
 
     private boolean stand() {
         return false;
-    }
+    }*/
 }
