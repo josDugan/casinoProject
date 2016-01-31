@@ -39,11 +39,15 @@ public class Deck {
         return cardCount;
     }
 
+    public ArrayList<Card> getDeck(){
+        return deck;
+    }
+
 
     public Card dealCardOffTop() {
         if(cardCount > 0){
             cardCount--;
-            return deck.get(0); // indicates a single Card object in an array.
+            return deck.remove(0); // indicates a single Card object in an array.
         } else {
             fillDeck();
             shuffle();
@@ -63,8 +67,8 @@ public class Deck {
     public String toString(){
         String[] deckStrings = new String[cardCount];
         for(int i = 0; i < cardCount; i++){
-            deckStrings[i] = deck.get(i).toString(); // set each position of the String array to each single card object
-
+            deckStrings[i] = deck.remove(i).toString(); // set each position of the String array to each single card object
+                //calls card toString method on each card object
         }
         return Arrays.toString(deckStrings); // Arrays toString method
     }

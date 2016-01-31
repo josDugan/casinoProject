@@ -12,14 +12,15 @@ public class Card {
 
 
     public Card(Rank rank, Suit suit){
+        setRank(rank);
+        setSuit(suit);
+
     }
 
     public Card(int rankAsInt, int suitAsInt){
     }
 
-    public Rank getRank(){
-        return rank;
-    }
+    public Rank getRank(){return rank;}
 
     public Suit getSuit(){
         return suit;
