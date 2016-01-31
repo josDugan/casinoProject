@@ -9,26 +9,94 @@ import java.util.*;
 public class PokerGame extends CardGame {
     private Hand[] playerHands;
     private Player computerPlayer;
+    private String computerPlayerName;
+    private int pot;
+    private int numPlayers = 2;
+    private int handSize = 5;
+    Scanner scan;
+
+
+    public static void main(String[] args) {
+        PokerGame game = new PokerGame(new Player("OgNarf"));
+    }
 
     public PokerGame(Player player) {
         super(player);
+        scan = new Scanner(System.in);
+        playerHands = new Hand[numPlayers];
+        playPoker();
     }
 
-    private double evaluateHand(Hand hand) {
-        return 0;
+    public void playPoker(){
+
+        for (int i = 0 ; i < numPlayers; i++){
+            playerHands[i] = new Hand();
+            playerHands[i].addNCards(deck.dealNCards(handSize));
+            sortHand(playerHands[i]);
+            System.out.println(playerHands[i]);
+        }
+
+
+        while(getInPlay()){
+
+            System.out.println("Place a Bet Mother Fucker");
+            int bet = scan.nextInt();
+
+            for (int i = 0 ; i < numPlayers; i++){
+                System.out.println(playerHands[i]);
+            }
+
+
+            if(compareHand(playerHands).getId() == 0){
+                System.out.println("You win, here is your worthless human money. "  + (bet * 2) + " dollars.");
+            } else{
+                System.out.println("YOU LOSE");
+            }
+
+            toggleInPlay();
+        }
+
+
     }
 
-    private Hand compareHand(Hand[]... hands) {
-        return null;
+
+    private Hand compareHand(Hand... hands) {
+
+        Hand winner = hands[0];
+
+
+        for(int i = 0; i < hands.length-1; i++) {
+            if (HandEvaluator.evaluateHand(winner.getHand()) < HandEvaluator.evaluateHand(hands[i + 1].getHand()))
+                winner = hands[i + 1];
+        }
+        return winner;
+
     }
 
 
-    public static void sortHand(Hand hand) {
+    public static void sortHand(Hand hand)                                                                                                                                               {
         Collections.sort(hand.getHand());
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class HandEvaluator {
 
