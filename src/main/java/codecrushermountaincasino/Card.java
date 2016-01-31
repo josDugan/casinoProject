@@ -42,11 +42,13 @@ public class Card {
     }
 
     @Override
-    public String toString(){
-        return null;
+    public String toString(){  //regular toString refers to the reference.
+
+        return "rank: " + rank + "suit: " + suit;
     }
 
     public void showCard(){
+        System.out.println(this); //this refers to class(itself) any time you refer to variable, compiler looks for toString
     }
 
 
