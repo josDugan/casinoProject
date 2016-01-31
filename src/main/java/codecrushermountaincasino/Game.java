@@ -11,6 +11,7 @@ public class Game {
     public Game(Player player) {
 
         this.player = player;
+        inPlay = false;
     }
 
     public boolean getInPlay() {

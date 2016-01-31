@@ -12,14 +12,15 @@ public class Card {
 
 
     public Card(Rank rank, Suit suit){
+        setRank(rank);
+        setSuit(suit);
+
     }
 
     public Card(int rankAsInt, int suitAsInt){
     }
 
-    public Rank getRank(){
-        return rank;
-    }
+    public Rank getRank(){return rank;}
 
     public Suit getSuit(){
         return suit;
@@ -42,11 +43,13 @@ public class Card {
     }
 
     @Override
-    public String toString(){
-        return null;
+    public String toString(){  //regular toString refers to the reference.
+
+        return "rank: " + rank + "suit: " + suit;
     }
 
     public void showCard(){
+        System.out.println(this); //this refers to class(itself) any time you refer to variable, compiler looks for toString
     }
 
 
