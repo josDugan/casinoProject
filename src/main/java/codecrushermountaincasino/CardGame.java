@@ -8,9 +8,10 @@ public class CardGame extends Game{
 
     public CardGame(Player player) {
         super(player);
+        deck = new Deck();
     }
 
     public Deck getDeck() {
-        return null;
+        return deck;
     }
 }
