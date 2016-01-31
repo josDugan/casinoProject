@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by Taylor on 1/30/16.
  */
 public class Hand {
-    private ArrayList<Card> hand;
+    private ArrayList<Card> hand = new ArrayList<Card>();
     private int cardCount;
     private int maxCards;
 
@@ -23,6 +23,9 @@ public class Hand {
     }
 
     public void addCard(Card card){
+
+        hand.add(card);
+
     }
 
     public Card removeCard(Card card){
@@ -35,7 +38,7 @@ public class Hand {
 
     @Override
     public String toString(){
-        return null;
+        return hand.toString();
     }
 
     public void showCards(){

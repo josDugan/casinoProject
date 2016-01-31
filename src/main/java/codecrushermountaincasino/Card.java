@@ -3,7 +3,7 @@ package codecrushermountaincasino;
 /**
  * Created by Taylor on 1/30/16.
  */
-public class Card {
+public class Card implements Comparable<Card> {
 
     private Rank rank;
     private Suit suit;
@@ -11,50 +11,66 @@ public class Card {
     private int suitAsInt;
 
 
-    public Card(Rank rank, Suit suit){
+    public Card(Rank rank, Suit suit) {
+
+        this.rank = rank;
+        this.suit = suit;
+
+
     }
 
-    public Card(int rankAsInt, int suitAsInt){
+    public Card(int rankAsInt, int suitAsInt) {
+
     }
 
-    public Rank getRank(){
+    public Rank getRank() {
         return rank;
     }
 
-    public Suit getSuit(){
+    public Suit getSuit() {
         return suit;
     }
 
-    public int getRankAsInt(){
+    public int getRankAsInt() {
         return rankAsInt;
     }
 
-    public int getSuitAsInt(){
+    public int getSuitAsInt() {
         return suitAsInt;
     }
 
-    public void setRank(Rank rank){
+    public void setRank(Rank rank) {
         this.rank = rank;
     }
 
-    public void setSuit(Suit suit){
+    public void setSuit(Suit suit) {
         this.suit = suit;
     }
 
     @Override
-    public String toString(){
-        return null;
+    public String toString() {
+        return rank + " " + suit;
     }
 
-    public void showCard(){
+    public void showCard() {
+    }
+
+    public int compareTo(Card o) {
+        if (this.getRank().ordinal() < o.getRank().ordinal()) {
+            return -1;
+        } else if (this.getRank().ordinal() > o.getRank().ordinal()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
 
-    public enum Rank{
+    public enum Rank {
         ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
     }
 
-    public enum Suit{
+    public enum Suit {
         CLUBS, DIAMONDS, HEARTS, SPADES
     }
 }
