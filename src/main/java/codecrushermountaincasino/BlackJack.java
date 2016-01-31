@@ -16,10 +16,14 @@ public class BlackJack extends CardGame{
     }
 
     public void playBlackJack() {
+        System.out.println("Welcome to Blackjack!");
 
     }
 
+
+
     private void setUp() {
+
 
     }
 

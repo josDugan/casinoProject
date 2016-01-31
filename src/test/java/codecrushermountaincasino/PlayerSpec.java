@@ -57,6 +57,7 @@ public class PlayerSpec {
         assertEquals("Incorrect value returned", expected, returned);
     }
 
+    @Test
     public void testRemoveChips() {
         player.addChips(TEN_CHIPS);
         int returned = player.removeChips(FIVE_CHIPS);
@@ -70,6 +71,7 @@ public class PlayerSpec {
         assertEquals("Incoreect value returned", expected, returned);
     }
 
+    @Test
     public void testPlaceBet() {
         player.addChips(TEN_CHIPS);
         int returned = player.placeBet(FIVE_CHIPS);
