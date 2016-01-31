@@ -19,7 +19,7 @@ public class Deck {
 
     }
 
-    private void fillDeck(){
+    private void fillDeck() {
         deck = new ArrayList<Card>();
         for (int i = 0; i <= 12; i++) {
             for (int j = 0; j <= 3; j++) {
@@ -30,18 +30,24 @@ public class Deck {
         }
     }
 
+
     private void shuffle(){
         Collections.shuffle(deck);
     }
+
 
 
     public int getCardCount(){
         return cardCount;
     }
 
+
     public ArrayList<Card> getDeck(){
         return deck;
     }
+
+
+
 
 
     public Card dealCardOffTop() {
@@ -67,8 +73,10 @@ public class Deck {
     public String toString(){
         String[] deckStrings = new String[cardCount];
         for(int i = 0; i < cardCount; i++){
+
             deckStrings[i] = deck.remove(i).toString(); // set each position of the String array to each single card object
                 //calls card toString method on each card object
+
         }
         return Arrays.toString(deckStrings); // Arrays toString method
     }

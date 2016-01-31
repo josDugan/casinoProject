@@ -35,7 +35,7 @@ public class BlackJack extends CardGame{
             if (getTurn() == playerTurn) {
 
             }
-            else (getTurn() == computerTurn) {
+            else {
 
                 toggleInPlay();
             }
@@ -55,7 +55,7 @@ public class BlackJack extends CardGame{
 
     }
 
-    hit
+
 
 
     private void hit(Hand hand) {
