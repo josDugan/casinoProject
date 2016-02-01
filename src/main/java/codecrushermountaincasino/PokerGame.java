@@ -2,6 +2,7 @@ package codecrushermountaincasino;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Taylor on 1/30/16.
@@ -27,75 +28,283 @@ public class PokerGame extends CardGame {
         playPoker();
     }
 
-    public void playPoker(){
-
-        for (int i = 0 ; i < numPlayers; i++){
-            playerHands[i] = new Hand();
-            playerHands[i].addNCards(deck.dealNCards(handSize));
-            sortHand(playerHands[i]);
-            System.out.println(playerHands[i]);
-        }
+    public void playPoker() {
 
 
-        while(getInPlay()){
 
-            System.out.println("Place a Bet Mother Fucker");
-            int bet = scan.nextInt();
 
-            for (int i = 0 ; i < numPlayers; i++){
-                System.out.println(playerHands[i]);
+        while (getInPlay()) {
+
+            for (int i = 0; i < numPlayers; i++) {
+                playerHands[i] = new Hand();
+                playerHands[i].addNCards(deck.dealNCards(handSize));
+                sortHand(playerHands[i]);
             }
 
+            System.out.println("Make ya Bets yous got " +player.getChips()+ " lorps");
+            int bet = isValidBet(scan.nextLine());
+            pot += bet;
+            player.removeChips(bet);
 
-            if(compareHand(playerHands).getId() == 0){
-                System.out.println("You win, here is your worthless human money. "  + (bet * 2) + " dollars.");
-            } else{
-                System.out.println("YOU LOSE");
+
+
+            System.out.println("Your hand is:");
+            printHand(playerHands[0].getHand());
+
+            // delay the processing a bit
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+            } catch (InterruptedException e) {
             }
 
-            toggleInPlay();
+            System.out.println("You gonna fold or play?");
+
+            String foldOrPlay = isValidFoldorPlay(scan.nextLine());
+
+            if(foldOrPlay.equalsIgnoreCase("fold") || foldOrPlay.equalsIgnoreCase("f"))
+                if(fold() == true) // will return true if the player wants to play another hand after folding
+                    continue;
+                else
+                    return;
+
+            bet();
+
+            System.out.println("You wanna discard?");
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            printHand(playerHands[0].getHand());
+            String yesOrNo = isValidYesNoDiscard(scan.nextLine());
+            if(yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("y")){
+                System.out.println("Just tell me then numbers of the cards you wanna discard...  Can you handle that??");
+                String[] discard = isValidOneThroughFive(scan.nextLine());
+                for (int i = 0; i < discard.length; i++) {
+                    int temp = Integer.parseInt(discard[i]);
+                    playerHands[0].discardAndReplace(temp - 1, deck.dealCardOffTop());
+                }
+                try {
+                    TimeUnit.MILLISECONDS.sleep(1000);
+                } catch (InterruptedException e) {
+                }
+                sortHand(playerHands[0]);
+                System.out.println("Your new hand is: ");
+                printHand(playerHands[0].getHand());
+               bet();
+            }
+
+            /*sortHand(playerHands[0]);
+            System.out.println("Your hand is:");
+            printHand(playerHands[0].getHand());*/
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("My hand is:");
+            printHand(playerHands[1].getHand());
+
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            if (compareHand(playerHands).getId() == 0) {
+                System.out.println("You win, here.... worthless human... " + "+" + (pot) + " lorps.");
+            } else {
+                System.out.println("YOU LOSE HaJahaaJoJO......  And they say you are an intelligent race.....");
+            }
+
+            System.out.println("You gonna play again?");
+            yesOrNo = isValidYesNo(scan.nextLine());
+            if (yesOrNo.equalsIgnoreCase("no") || yesOrNo.equalsIgnoreCase("n")) {
+                System.out.println("I know you were muphlarph...");
+                toggleInPlay();
+            }
         }
 
 
     }
 
+        private void bet(){
+            if(player.getChips() > 0) {
+                System.out.println("Do you want to Bet some more?  ");
+                String yesOrNo = isValidYesNo(scan.nextLine());
+                if (yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("y")) {
+                    System.out.println("How much u wanna bet big guy? You got " + player.getChips() + " lorps in case yous can't count");
+                    int bet = isValidBet(scan.nextLine());
+                    pot += bet;
+                    player.removeChips(bet);
+                }
+            } else{
+                System.out.println("You got no chips left so I'm not gonna bother asking you for a bet....");
+            }
+
+        }
+
+        private void printHand(ArrayList<Card> hand){
+            int count= 1;
+            String handResult = "";
+            for (Card card : hand) {
+                handResult += "(" + count + ")" + card + "    ";
+                count++;
+            }
+            System.out.println(handResult);
+        }
+
+        private String isValidFoldorPlay(String str){
+            boolean isValid = false;
+            while(!isValid)
+            if(!(str.equalsIgnoreCase("fold") || str.equalsIgnoreCase("play") || str.equalsIgnoreCase("f") || str.equalsIgnoreCase("p"))){
+                System.out.println("I said fold or play...  What don't you understand?  Read my mandibles... Fold or Play??");
+                Scanner scan= new Scanner(System.in);
+                str = scan.nextLine();
+            } else {
+                isValid = true;
+            }
+            return str;
+        }
+
+
+    private int isValidBet(String str){
+        int result = 0;
+        int validInt = 0;
+        boolean exception = false;
+        while(validInt != 1) {
+            try {
+                result = Integer.parseInt(str);
+                exception = false;
+            } catch (NumberFormatException e) {
+                System.out.println("That's not a number.  Dirty human.....  What's your wager? ");
+                exception = true;
+            } catch (NullPointerException e) {
+                System.out.println("That's not a number.  Dirty human.....  What's your wager? ");
+                exception = true;
+            }
+            if (result > player.getChips() && !exception) {
+                System.out.println("You don't have enough lorps!  Don't you know how to count human?  Try again....");
+            } else if (!exception && result == player.getChips()){
+                System.out.println("All in huh?  Cocky human.... ");
+                validInt = 1;
+                return result;
+            } else if(!exception){
+                validInt = 1;
+            }
+         if(validInt!=1) {
+             Scanner scan = new Scanner(System.in);
+             str = scan.nextLine();
+         }
+        }
+        return result;
+    }
+
+    private String isValidYesNo(String str) {
+
+        boolean isValid = false;
+        while(!isValid)
+            if(!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))){
+                System.out.println("I said Yes.... or No.... You humans really are as dumb as you are ugly.....");
+                Scanner scan= new Scanner(System.in);
+                str = scan.nextLine();
+            } else {
+                isValid = true;
+            }
+        return str;
+
+    }
+
+    private String isValidYesNoDiscard(String str) {
+
+        boolean isValid = false;
+        while(!isValid)
+            if(!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))){
+                System.out.println("It's a Yes or No Question.... I'll say it slowly.... Do.... you... want.. to... discard?");
+                Scanner scan= new Scanner(System.in);
+                str = scan.nextLine();
+            } else {
+                isValid = true;
+            }
+        return str;
+
+    }
+
+    private String[] isValidOneThroughFive(String str){
+
+
+        boolean isValid = false;
+        String[] strings = {};
+        Scanner scan = new Scanner(System.in);
+
+        while(!isValid){
+            strings = str.split("\\s");
+            for (String string : strings) {
+                try {
+                   int i= Integer.parseInt(string);
+                    if (!(i > 0 && i <= 5)){
+                        System.out.println(string);
+                        System.out.println("Dumb and ugly.... You only have five cards...  Which cards do you want to discard?");
+                        str = scan.nextLine();
+                        continue;
+                    }  else {
+                        isValid = true;
+                    }
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Just tell me the numbers of the cards you wanna discard....");
+                    str = scan.nextLine();
+                } catch (NullPointerException e) {
+                    System.out.println("Just tell me the numbers of the cards you wanna discard....");
+                    str = scan.nextLine();
+                }
+            }
+
+
+
+        }
+        return strings;
+    }
+
+    private boolean fold() {
+
+        System.out.println("You Fold.  You Lose.  Play again?");
+        Scanner scan = new Scanner(System.in);
+        boolean valid = true;
+        do {
+            String str = scan.nextLine();
+            if (!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))) {
+                System.out.println("That's not what I axed.  You gonna play again?  Yes or No?  Humans....(grunt)");
+                valid = false;
+            } else {
+                if (str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y")) {
+                    return true;
+                } else {
+                    toggleInPlay();
+                    return false;
+                }
+            }
+        } while (!valid);
+
+        return false;
+    }
 
     private Hand compareHand(Hand... hands) {
 
         Hand winner = hands[0];
 
 
-        for(int i = 0; i < hands.length-1; i++) {
-            if (HandEvaluator.evaluateHand(winner.getHand()) < HandEvaluator.evaluateHand(hands[i + 1].getHand()))
-                winner = hands[i + 1];
-        }
+        if (HandEvaluator.evaluateHand(winner.getHand()) < HandEvaluator.evaluateHand(hands[1].getHand()))
+            winner = hands[1];
+
+
         return winner;
 
     }
 
 
-    public static void sortHand(Hand hand)                                                                                                                                               {
+    public static void sortHand(Hand hand) {
         Collections.sort(hand.getHand());
     }
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class HandEvaluator {

@@ -13,7 +13,13 @@ public class Hand {
     private static int numHands;
     private int id = numHands;
 
+
+    public Hand(){
+        numHands++;
+    }
+
     public ArrayList<Card> getHand() {
+
         return hand;
     }
 
@@ -31,14 +37,23 @@ public class Hand {
 
     }
 
-    public void addNCards(Card[] cards){
+    public void addNCards(Card... cards){
 
         hand.addAll(Arrays.asList(cards));
 
     }
 
     public Card removeCard(Card card){
-        return card;
+          return (hand.remove(card)? card : null);
+    }
+
+    public boolean discardAndReplace(int index, Card newCard){
+        Card tempCard = hand.get(index);
+        if(hand.size()>index) {
+            hand.add(index, newCard);
+            return hand.remove(tempCard);
+        }
+        return false;
     }
 
     public Card removeCard(int cardIndex){

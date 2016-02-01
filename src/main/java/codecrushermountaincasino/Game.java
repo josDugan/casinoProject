@@ -30,7 +30,9 @@ public class Game {
     }
 
     public void toggleInPlay() {
+
         inPlay = !inPlay;
+
     }
 
     public void payout(int amount, Player winner) {
