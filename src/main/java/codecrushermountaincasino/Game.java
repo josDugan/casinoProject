@@ -5,7 +5,7 @@ package codecrushermountaincasino;
  */
 public class Game {
 
-    private boolean inPlay= true;
+    private boolean inPlay = true;
 
     protected Player player;
     private int turn;
@@ -13,7 +13,7 @@ public class Game {
     public Game(Player player) {
 
         this.player = player;
-        inPlay = false;
+        inPlay = true;
     }
 
     public boolean getInPlay() {

@@ -93,4 +93,11 @@ public class Slots extends Game {
     public void printSlots() {
         System.out.println(this); //System out finds toString method.
     }
+
+
+    public static void main(String[] args) {
+
+        Player player = new Player("jangles");
+        Slots slots = new Slots(player);
+    }
 }
