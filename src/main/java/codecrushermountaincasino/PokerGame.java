@@ -29,9 +29,13 @@ public class PokerGame extends CardGame {
         playPoker();
     }
 
-    public void playPoker() {
 
 
+
+    public void playPoker()  {
+
+
+        printBlipBlorp();
 
 
         while (getInPlay()) {
@@ -337,6 +341,72 @@ public class PokerGame extends CardGame {
     }
 
 
+    private void printBlipBlorp(){
+
+
+        String welcomeTo = ""+
+        "(O))  ((O)    wWw     W  W         c  c      .-.      \\\\    ///    wWw        (o)__(o)     .-.\n"+
+        " ||    ||     (O)_   (O)(O)        (OO)    c(O_O)c    ((O)  (O))    (O)_       (__  __)   c(O_O)c\n"+
+        " || /\\ ||     / __)    ||        ,'.--.)  ,'.---.`,    | \\  / |     / __)        (  )    ,'.---.`,\n"+
+        " ||//\\\\||    / (       | \\      / //_|_\\ / /|_|_|\\ \\   ||\\\\//||    / (            )(    / /|_|_|\\ \\ \n"+
+        " / /  \\ \\   (  _)      |  `.    | \\___   | \\_____/ |   || \\/ ||   (  _)          (  )   | \\_____/ |\n"+
+        "( /    \\ )   \\ \\_     (.-.__)   '.    )  '. `---' .`   ||    ||    \\ \\_           )/    '. `---' .`\n"+
+        " )      (     \\__)     `-'        `-.'     `-...-'    (_/    \\_)    \\__)         (        `-...-'";
+
+
+
+
+        String blipBlorp3 = ""+
+               " ___      W  W       wW  Ww    ))              ___      W  W        .-.       ()_()     ))          .--.       .--.       .--.\n"+
+               "(___)__  (O)(O)      (O)(O)   (o0)-.          (___)__  (O)(O)     c(O_O)c     (O o)    (o0)-.      (O)(O)     (O)(O)     (O)(O)\n"+
+               "(O)(O)     ||         (..)     | (_))         (O)(O)     ||      ,'.---.`,     |^_\\     | (_))     | o /      | o /      | o /\n"+
+               "/  _\\      | \\         ||      | .-'          /  _\\      | \\    / /|_|_|\\ \\    |(_))    | .-'      |`-/       |`-/       |`-/\n"+
+               "| |_))     |  `.      _||_     |(             | |_))     |  `.  | \\_____/ |    |  /     |(         |_/        |_/        |_/\n"+
+               "| |_))    (.-.__)    (_/\\_)     \\)            | |_))    (.-.__) '. `---' .`    )|\\\\      \\)        _          _          _\n"+
+               "(.'-'      `-'                  (             (.'-'      `-'      `-...-'     (/  \\)     (        (_)        (_)        (_)";
+
+
+        System.out.println(welcomeTo+"\n\n");
+
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(1300);
+        } catch (InterruptedException e) {
+
+        }
+        System.out.println(blipBlorp3);
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(1500);
+        } catch (InterruptedException e) {
+
+        }
+        System.out.println("\n\n\n\n\n\nUUHHH........ I'll be your dealer BlopBlopTim.  Listen..... I don't like you.... you don't like me.... lets not make this a regular thing\n");
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(2000);
+        } catch (InterruptedException e) {
+
+        }
+
+        System.out.println("I am requird to tell you that Blip Blorp is a lot like a game your planet has called five card draw poker\n");
+        try {
+            TimeUnit.MILLISECONDS.sleep(2000);
+        } catch (InterruptedException e) {
+
+        }
+        System.out.println("But you'll be playin agan'st me and blah blah blah..... Play or don't play... I don't care\n");
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(2000);
+        } catch (InterruptedException e) {
+
+        }
+
+    }
+
+
+
 }
 
 
@@ -509,8 +579,9 @@ class HandEvaluator {
                 isFourOfAKind(hand) || isStraight(hand) || isFlush(hand) || isRoyalFlush(hand) ||
                 isFullHouse(hand) || isStraightFlush(hand);
 
-        return checkAllOtherHands;
+        return !checkAllOtherHands;
     }
+
 
 
 }
