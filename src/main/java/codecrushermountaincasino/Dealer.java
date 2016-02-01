@@ -22,7 +22,7 @@ public class Dealer {
             if (bet > 0)
                 return bet;
             else {
-                System.out.println("Please bet a postive amount of money");
+                System.out.println("The alien dealer glares at you. 'Please bet a legitimate amount of money.");
                 return promptUserIntInput();
             }
         }

@@ -9,7 +9,6 @@ import java.util.HashMap;
 public class BlackJack extends CardGame{
     private Hand playerHand;
     private Hand computerHand;
-    //private Art art = new Art();
     private final static HashMap<Card.Rank, Integer> SCORING_GUIDE = new HashMap<Card.Rank, Integer>();
 
     // populates the scoring guide
@@ -34,13 +33,13 @@ public class BlackJack extends CardGame{
     }
 
     public void playBlackJack() {
-        System.out.println("Welcome to Blackjack!\n");
+        System.out.println("Welcome to J'AROBAK!\n");
         BlackjackDealer dealer = new BlackjackDealer();
         int bet = dealer.getBet();
         Deck deck = getDeck();
         Player humanPlayer = getPlayer();
         humanPlayer.setScore(0);
-        Player computerPlayer = new Player("Computer");
+        Player computerPlayer = new Player("D'Jibidab");
         int playerTurn = -1;
         int computerTurn = 1;
 
@@ -92,15 +91,15 @@ public class BlackJack extends CardGame{
 
         // determine winner and pass chips to human if game was won
         if (humanNotBusted && (computerBusted || humanPlayer.getScore() > computerPlayer.getScore())) {
-            System.out.println(humanPlayer.getName() + " just won " + bet + " chips!");
+            System.out.println("You just won " + bet + " lorps!");
             humanPlayer.addChips(bet);
         } else if (humanPlayer.getScore() == computerPlayer.getScore()) {
-            System.out.println("Tie goes to the house, you lose.");
+            System.out.println("Tie goes to the Probe, you lose.");
         } else {
             System.out.println(humanPlayer.getName() + " lost.\n");
         }
 
-        System.out.println("You have a total of " + humanPlayer.getChips() + " chips.\n");
+        System.out.println("You have a total of " + humanPlayer.getChips() + " lorps.\n");
 
 
         humanPlayer.setScore(0);
@@ -111,7 +110,7 @@ public class BlackJack extends CardGame{
         if (dealer.playAgain()) {
             playBlackJack();
         } else {
-            System.out.println("Enjoy the resot of your stay\n");
+            System.out.println("'We have a bunch of other games here. Actually, two more.'\n");
         }
     }
 
@@ -142,12 +141,12 @@ public class BlackJack extends CardGame{
         System.out.println("BLACKJACK");
         System.out.println(getPlayer().getName() + "'s score: " + getPlayer().getScore());
         System.out.println();
-        System.out.print(getPlayer().getName() +  "'s Hand: ");
+        System.out.println(getPlayer().getName() +  "'s Hand: \n");
         playerHand.showCards();
         System.out.println();
         System.out.println(computerPlayer.getName() + "'s score: " + computerPlayer.getScore());
         System.out.println();
-        System.out.print(computerPlayer.getName() + "'s Hand: ");
+        System.out.println(computerPlayer.getName() + "'s Hand: \n");
         computerHand.showCards();
         System.out.println();
         System.out.println("=========================================================================================");
@@ -170,20 +169,14 @@ public class BlackJack extends CardGame{
 
     private boolean playerBusted(Player player) {
         if (player.getScore() > 21) {
-            System.out.println(player.getName() + " has busted\n");
+            System.out.println("Busted!\n");
             return true;
         }
         return false;
 
     }
 
-    // for user game testing
-/*
-    public static void main(String[] arg) {
-        BlackJack game = new BlackJack(new Player("joe"));
-        game.playBlackJack();
-    }
-*/
+
 
 }
 

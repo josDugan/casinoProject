@@ -10,7 +10,6 @@ public class Card implements Comparable<Card>{
     private int rankAsInt;
     private int suitAsInt;
     private boolean faceUp;
-    private String id;
 
 
     public Card(Rank rank, Suit suit){

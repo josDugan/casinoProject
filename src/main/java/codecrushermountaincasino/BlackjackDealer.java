@@ -26,13 +26,13 @@ public class BlackjackDealer extends Dealer {
                 return false;
             }
             else {
-                System.out.println("Please choose to hit or stand.");
+                System.out.println("Choose to hit or stand.");
                 return promptUserIntInput();
             }
         }
 
         else {
-            System.out.println("Not a valid move. Press 1 to Hit or 2 to Stand.");
+            System.out.println("Invalid move. Press 1 to Hit or 2 to Stand.");
             return promptUserIntInput();
         }
     }
@@ -46,7 +46,7 @@ public class BlackjackDealer extends Dealer {
         int validInput = 0;
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Play blackjack again? [Yes (1), No (2)");
+        System.out.println("Play J'AROBAK again? [Yes (1), No (2)");
         if (in.hasNextInt()) {
             validInput = in.nextInt();
             if (validInput == 1) {
@@ -56,13 +56,13 @@ public class BlackjackDealer extends Dealer {
                 return false;
             }
             else {
-                System.out.println("Please choose to hit or stand.");
+                System.out.println("Choose to hit or stand.");
                 return promptUserIntInput();
             }
         }
 
         else {
-            System.out.println("Not a valid move. Press 1 to Hit or 2 to Stand.");
+            System.out.println("Invalid move. Press 1 to Hit or 2 to Stand.");
             return promptUserIntInput();
         }
     }

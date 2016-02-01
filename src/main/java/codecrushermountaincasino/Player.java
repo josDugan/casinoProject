@@ -60,7 +60,7 @@ public class Player {
 
     @Override
     public String toString() {
-        String playerObject = "Name: " + name + "\nChips: " + chips + "\nScore: " + score;
+        String playerObject = "Name: " + name + "\nLorps: " + chips + "\nScore: " + score;
 
         return playerObject;
     }

@@ -9,7 +9,7 @@ public class Casino {
     String name;
 
     public Casino(){
-        name = "casino";
+        name = "The Probe";
         host = new Host();
         guest = new Player("");
     }
@@ -29,7 +29,8 @@ public class Casino {
                 playGames = false;
             }
         }
-        System.out.println("See you later");
+        System.out.println("Ulmin looks at the clock behind you. 'Three more augwatts 'till my shift is over.\n" +
+                "We look forward to seeing you back at The Probe.'");
     }
 
     private void chooseGame()  {
@@ -52,13 +53,13 @@ public class Casino {
                 host.tellJoke();
                 break;
             default:
-                System.out.println("Not a valid option");
+                System.out.println("'Don't waste my time. Choose a valid option.'");
                 break;
         }
     }
 
-    public static void main(String[] args) {
-        Casino casino = new Casino();
-        casino.letTheGamesBegin();
+    public String getName() {
+        return name;
     }
+
 }

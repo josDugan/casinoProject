@@ -42,7 +42,7 @@ public class PokerGame extends CardGame {
                 sortHand(playerHands[i]);
             }
 
-            System.out.println("Make ya Bets yous got " +player.getChips()+ " lorps");
+            System.out.println("Make ya bets yous got " +player.getChips()+ " lorps");
             int bet = isValidBet(scan.nextLine());
             pot += bet;
             player.removeChips(bet);
@@ -84,7 +84,7 @@ public class PokerGame extends CardGame {
             printHand(playerHands[0].getHand());
             String yesOrNo = isValidYesNoDiscard(scan.nextLine());
             if(yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("y")){
-                System.out.println("Just tell me then numbers of the cards you wanna discard...  Can you handle that??");
+                System.out.println("Just tell me then numbers of the cards you wanna discard... Can you handle that??");
                 String[] discard = isValidOneThroughFive(scan.nextLine());
                 for (int i = 0; i < discard.length; i++) {
                     int temp = Integer.parseInt(discard[i]);
@@ -130,15 +130,16 @@ public class PokerGame extends CardGame {
             }
 
             if (compareHand(playerHands).getId() == 0) {
-                System.out.println("You win, here.... worthless human... " + "+" + (pot) + " lorps.");
+                System.out.println("BlopBlopTim shakes his alien tentacle at you. 'You win, here.... worthless human... \n" +
+                        "+" + (pot) + " lorps.'");
             } else {
-                System.out.println("YOU LOSE HaJahaaJoJO......  And they say you are an intelligent race.....");
+                System.out.println("'YOU LOSE HaJahaaJoJO...... And they say you are an intelligent race.....'");
             }
 
-            System.out.println("You gonna play again?");
+            System.out.println("'You gonna play again?'");
             yesOrNo = isValidYesNo(scan.nextLine());
             if (yesOrNo.equalsIgnoreCase("no") || yesOrNo.equalsIgnoreCase("n")) {
-                System.out.println("I know you were muphlarph...");
+                System.out.println("BlopBlopTim mutters to himself. 'I knew you were muphlarph...'");
                 toggleInPlay();
             }
         }
@@ -148,20 +149,30 @@ public class PokerGame extends CardGame {
 
         private void bet(){
             if(player.getChips() > 0) {
-                System.out.println("Do you want to Bet some more?  ");
+                System.out.println("'Do you want to Bet some more?' ");
                 String yesOrNo = isValidYesNo(scan.nextLine());
                 if (yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("y")) {
-                    System.out.println("How much u wanna bet big guy? You got " + player.getChips() + " lorps in case yous can't count");
+                    System.out.println("'How much you wanna bet big guy? You got " + player.getChips() + " lorps in case yous can't count.'");
                     int bet = isValidBet(scan.nextLine());
                     pot += bet;
                     player.removeChips(bet);
                 }
             } else{
-                System.out.println("You got no chips left so I'm not gonna bother asking you for a bet....");
+                System.out.println("'You got no chips left so I'm not gonna bother asking you for a bet....'");
             }
 
         }
+    /*
+        private void printHand(ArrayList<Card> hand) {
 
+        }*/
+    private void printHand(ArrayList<Card> hand) {
+        Hand handToPass = new Hand();
+        handToPass.setHand(hand);
+        handToPass.showCards();
+        System.out.println("\n          1                       2                      3                      4                        5\n");
+    }
+/*
         private void printHand(ArrayList<Card> hand){
             int count= 1;
             String handResult = "";
@@ -171,12 +182,12 @@ public class PokerGame extends CardGame {
             }
             System.out.println(handResult);
         }
-
+*/
         private String isValidFoldorPlay(String str){
             boolean isValid = false;
             while(!isValid)
             if(!(str.equalsIgnoreCase("fold") || str.equalsIgnoreCase("play") || str.equalsIgnoreCase("f") || str.equalsIgnoreCase("p"))){
-                System.out.println("I said fold or play...  What don't you understand?  Read my mandibles... Fold or Play??");
+                System.out.println("'I said fold or play...  What don't you understand?  Read my mandibles... Fold or Play??'");
                 Scanner scan= new Scanner(System.in);
                 str = scan.nextLine();
             } else {
@@ -195,16 +206,16 @@ public class PokerGame extends CardGame {
                 result = Integer.parseInt(str);
                 exception = false;
             } catch (NumberFormatException e) {
-                System.out.println("That's not a number.  Dirty human.....  What's your wager? ");
+                System.out.println("'That's not a number.  Dirty human.....  What's your wager?' ");
                 exception = true;
             } catch (NullPointerException e) {
-                System.out.println("That's not a number.  Dirty human.....  What's your wager? ");
+                System.out.println("'That's not a number.  Dirty human.....  What's your wager?' ");
                 exception = true;
             }
             if (result > player.getChips() && !exception) {
-                System.out.println("You don't have enough lorps!  Don't you know how to count human?  Try again....");
+                System.out.println("'You don't have enough lorps!  Don't you know how to count human?  Try again....'");
             } else if (!exception && result == player.getChips()){
-                System.out.println("All in huh?  Cocky human.... ");
+                System.out.println("'All in huh?  Cocky human....' ");
                 validInt = 1;
                 return result;
             } else if(!exception){
@@ -223,7 +234,7 @@ public class PokerGame extends CardGame {
         boolean isValid = false;
         while(!isValid)
             if(!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))){
-                System.out.println("I said Yes.... or No.... You humans really are as dumb as you are ugly.....");
+                System.out.println("'I said Yes.... or No.... You humans really are as dumb as you are ugly.....'");
                 Scanner scan= new Scanner(System.in);
                 str = scan.nextLine();
             } else {
@@ -238,7 +249,7 @@ public class PokerGame extends CardGame {
         boolean isValid = false;
         while(!isValid)
             if(!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))){
-                System.out.println("It's a Yes or No Question.... I'll say it slowly.... Do.... you... want.. to... discard?");
+                System.out.println("'It's a Yes or No Question.... I'll say it slowly.... Do.... you... want.. to... discard?'");
                 Scanner scan= new Scanner(System.in);
                 str = scan.nextLine();
             } else {
@@ -262,7 +273,7 @@ public class PokerGame extends CardGame {
                    int i= Integer.parseInt(string);
                     if (!(i > 0 && i <= 5)){
                         System.out.println(string);
-                        System.out.println("Dumb and ugly.... You only have five cards...  Which cards do you want to discard?");
+                        System.out.println("'Dumb and ugly.... You only have five cards...  Which cards do you want to discard?'");
                         str = scan.nextLine();
                         continue;
                     }  else {
@@ -270,10 +281,10 @@ public class PokerGame extends CardGame {
                     }
 
                 } catch (NumberFormatException e) {
-                    System.out.println("Just tell me the numbers of the cards you wanna discard....");
+                    System.out.println("'Just tell me the numbers of the cards you wanna discard....'");
                     str = scan.nextLine();
                 } catch (NullPointerException e) {
-                    System.out.println("Just tell me the numbers of the cards you wanna discard....");
+                    System.out.println("'Just tell me the numbers of the cards you wanna discard....'");
                     str = scan.nextLine();
                 }
             }
@@ -292,7 +303,7 @@ public class PokerGame extends CardGame {
         do {
             String str = scan.nextLine();
             if (!(str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y") || str.equalsIgnoreCase("no") || str.equalsIgnoreCase("n"))) {
-                System.out.println("That's not what I axed.  You gonna play again?  Yes or No?  Humans....(grunt)");
+                System.out.println("'That's not what I axed.  You gonna play again?  Yes or No?  Humans....(grunt)'");
                 valid = false;
             } else {
                 if (str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y")) {

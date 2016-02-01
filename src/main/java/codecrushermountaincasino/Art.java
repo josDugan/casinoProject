@@ -1472,12 +1472,12 @@ public class Art {
 
     public void processASCIIArt(ArrayList<String[]> anArray, int arrayLength) {
         int arrayIdx = 0;
-        System.out.println(anArray);
         while (arrayIdx < arrayLength) {
             StringBuilder sb = new StringBuilder();
             for (String[] array: anArray) {
                 sb.append(array[arrayIdx] + "     ");
             }
+
             System.out.println(sb.toString());
             arrayIdx++;
         }

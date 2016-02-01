@@ -56,6 +56,10 @@ public class Hand {
         hand.addAll(Arrays.asList(cards));
     }
 
+    public void setHand(ArrayList<Card> cardsInHand) {
+        hand = cardsInHand;
+    }
+
 
     public Card removeCard(Card card){
           return (hand.remove(card)? card : null);
@@ -73,9 +77,9 @@ public class Hand {
 
     public Card removeCard(int cardIndex){
         if (cardIndex > hand.size()-1){
-            System.out.println("Larkeefrak says you must enter a valid index value.");
+            System.out.println("OgNarf says you must enter a valid index value.");
         } else if (cardIndex < 0); {
-            System.out.println("Larkeefrak says you must enter a valid index value.");
+            System.out.println("OgNarf says you must enter a valid index value.");
         }
         return hand.remove(cardIndex);
 
