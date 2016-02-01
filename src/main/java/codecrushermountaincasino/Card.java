@@ -1,9 +1,11 @@
 package codecrushermountaincasino;
 
+import java.util.Comparator;
+
 /**
  * Created by Taylor on 1/30/16.
  */
-public class Card {
+public class Card implements Comparable<Card>{
 
     private Rank rank;
     private Suit suit;
@@ -18,6 +20,10 @@ public class Card {
     }
 
     public Card(int rankAsInt, int suitAsInt){
+
+        rank = Rank.values()[rankAsInt];
+        suit =  Suit.values()[suitAsInt];
+
     }
 
     public Rank getRank(){return rank;}
@@ -50,6 +56,21 @@ public class Card {
 
     public void showCard(){
         System.out.println(this); //this refers to class(itself) any time you refer to variable, compiler looks for toString
+
+    }
+
+    public int compareTo(Card card2) {
+        if (this.getRank().ordinal() < card2.getRank().ordinal()) {
+            return -1;
+        }
+
+        else if (this.getRank().ordinal() > card2.getRank().ordinal()) {
+            return 1;
+        }
+
+        else {
+            return 0;
+        }
     }
 
 
@@ -61,3 +82,8 @@ public class Card {
         CLUBS, DIAMONDS, HEARTS, SPADES
     }
 }
+
+
+
+
+

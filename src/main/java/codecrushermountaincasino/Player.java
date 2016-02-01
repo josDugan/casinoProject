@@ -1,7 +1,7 @@
 package codecrushermountaincasino;
 
 /**
- * Created by Taylor on 1/30/16.
+ * Created by Joseph Dugan on 1/30/16.
  */
 public class Player {
     private String name;
@@ -15,15 +15,15 @@ public class Player {
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public int getChips() {
-        return 0;
+        return chips;
     }
 
     public int getScore() {
-        return 0;
+        return score;
     }
 
     public void setChips(int chips) {
@@ -34,30 +34,36 @@ public class Player {
         this.score = score;
     }
 
-    public int addChips(int chips) {
-        this.chips += chips;
-        return 0;
+
+
+    public int addChips(int newChipValue) {
+       chips += newChipValue;
+        return newChipValue;
     }
 
     public int removeChips(int chips) {
         this.chips -= chips;
-        return 0;
+        return chips;
     }
 
     public int addScore(int score) {
         this.score += score;
-        return 0;
+        return score;
     }
 
     public int placeBet(int chips) {
-        return 0;
+        removeChips(chips);
+        return chips;
     }
 
+    @Override
     public String toString() {
-        return null;
+        String playerObject = "Name: " + name + "\nChips: " + chips + "\nScore: " + score;
+
+        return playerObject;
     }
 
     public void print() {
-        System.out.println(toString());
+        System.out.println(this);
     }
 }
