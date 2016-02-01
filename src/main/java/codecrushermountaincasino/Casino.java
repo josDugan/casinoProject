@@ -39,11 +39,9 @@ public class Casino {
         switch (gameChoice) {
             case 1:
                 PokerGame poker = new PokerGame(guest);
-                poker.playPoker();
                 break;
             case 2:
                 Slots slots = new Slots(guest);
-                slots.slotsEngine();
                 break;
             case 3:
                 BlackJack blackjack = new BlackJack(guest);

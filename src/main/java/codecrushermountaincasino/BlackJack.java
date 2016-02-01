@@ -33,7 +33,7 @@ public class BlackJack extends CardGame{
 
 
     public void playBlackJack() {
-        System.out.println("Welcome to J'AROBAK!\n");
+        printGreeting();
         BlackjackDealer dealer = new BlackjackDealer();
         int bet = dealer.getBet();
         Deck deck = getDeck();
@@ -173,6 +173,20 @@ public class BlackJack extends CardGame{
             return true;
         }
         return false;
+
+    }
+
+    private void printGreeting(){
+        System.out.println(""+
+                "              ('-.      _  .-')                .-. .-')      ('-.    .-. .-')\n"+
+                "          ,--.  ( OO ).-. ( \\( -O )              \\  ( OO )    ( OO ).-. \\  ( OO )\n"+
+                "    ,--. \\  |  / . --. /  ,------.  .-'),-----.  ;-----.\\    / . --. / ,--. ,--.\n"+
+                " .-')| ,|  `-'  | \\-.  \\  |  /`. ' ( OO'  .-.  ' | .-.  |    | \\-.  \\  |  .'  /\n"+
+                "( OO |(_|      .-'-'  |  |  |  /  | | /  |  | |  | | '-' /_) .-'-'  |  | |      /,\n"+
+                "| `-'|  |      \\| |_.'  |  |  |_.' | \\_) |  |\\|  | | .-. `.  \\| |_.'  | |    ' _) \n"+
+                ",--. |  |        |  .-.  |  |  .  '.'  \\ |  | |  | | |  \\  |  |  .-.  | |  .  \\\n"+
+                "|  '-'  /        |  | |  |  |  |\\  \\    `'  '-'  ' | '--'  /  |  | |  | |  |\\  \\\n"+
+                "`-----'        `--' `--'  `--' '--'      `-----'  `------'    `--' `--' `--' '--'");
 
     }
 

@@ -18,6 +18,7 @@ public class Slots extends Game {
     public Slots(Player player) {
         super(player); // reference the game player
         //assignSlotArt();
+
         slotsEngine();
 
 
@@ -39,7 +40,7 @@ public class Slots extends Game {
 
 
             Scanner scan = new Scanner(System.in);
-            setInPlay(true);
+            //setInPlay(true);
 
             System.out.println("Press 'z' to pull the lever, human.");
             if (scan.hasNext("z")) {
@@ -62,6 +63,7 @@ public class Slots extends Game {
             }
 
         }
+
     }
 
     public void pullLever() {
