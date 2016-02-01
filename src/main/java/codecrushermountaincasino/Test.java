@@ -368,7 +368,7 @@ public class Test {
         "|  /\\             |",
         "|  \\/           O |",
         "|_________________|",
-        ,
+
 
 
 
@@ -1261,6 +1261,6 @@ public final static String[]
 
 
         };
-    
+
 
 }
