@@ -4,7 +4,7 @@ package codecrushermountaincasino;
  * Created by Taylor on 1/30/16.
  */
 public class Game {
-    private boolean inPlay;
+    private boolean inPlay = true;
     protected Player player;
     private Player turn;
 
@@ -13,15 +13,15 @@ public class Game {
     }
 
     public boolean getInPlay() {
-        return false;
+        return inPlay;
     }
 
     public Player getPlayer() {
-        return null;
+        return player;
     }
 
     public Player getTurn() {
-        return null;
+        return turn;
     }
 
     public void setTurn(Player player) {
@@ -29,7 +29,7 @@ public class Game {
     }
 
     public void toggleInPlay() {
-
+        inPlay = !inPlay;
     }
 
     public Player determineWinner() {
