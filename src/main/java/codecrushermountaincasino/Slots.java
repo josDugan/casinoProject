@@ -9,13 +9,14 @@ import java.util.Scanner;
 public class Slots extends Game {
     private String[] payLine;
     HashMap<String,String> slotArt;
+    private Art art = new Art();
 
 
 
 
     public Slots(Player player) {
-        super(player); //reference the game player
-        assignSlotArt();
+        super(player); // reference the game player
+        //assignSlotArt();
         slotsEngine();
 
     }
@@ -26,16 +27,17 @@ public class Slots extends Game {
 
 
             Scanner scan = new Scanner(System.in);
-            System.out.println("Press 'z' to pull the lever, human.");
+            System.out.println("Press 'z' to pull the lever again or press anything else to leave, human.");
             if(scan.hasNext("z")){
                 pullLever();
                 printSlots();
                 calculateScore();
             } else {
                 toggleInPlay();
+                System.out.println("Enjoy the rest of your stay, human");
             }
 
-
+            System.out.println("You have " + player.getChips() + " lorps, human");
         }
 
     }
@@ -68,19 +70,23 @@ public class Slots extends Game {
             }
         }
     }
-
+    /*
     public void assignSlotArt() {
         slotArt = new HashMap<String, String>();
         slotArt.put("0", "ufo ");
         slotArt.put("1", "laser ");
         slotArt.put("2", "saturn ");
+    }*/
 
-
-    }
     public String[] getPayLine() {
         return payLine;
     }
 
+    public void printSlots() {
+        art.processASCIIArt(art.loadPaylineArt(payLine));
+    }
+
+    /* Old print and toString method
     @Override
     public String toString() {
         String slotArtString = "";
@@ -92,12 +98,14 @@ public class Slots extends Game {
 
     public void printSlots() {
         System.out.println(this); //System out finds toString method.
-    }
+    }*/
 
-
+    // for game testing purposes
+/*
     public static void main(String[] args) {
 
         Player player = new Player("jangles");
         Slots slots = new Slots(player);
     }
+*/
 }

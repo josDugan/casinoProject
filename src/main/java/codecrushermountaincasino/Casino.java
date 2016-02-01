@@ -6,8 +6,10 @@ package codecrushermountaincasino;
 public class Casino {
     private Player guest;
     private Host host;
+    String name;
 
     public Casino(){
+        name = "casino";
         host = new Host();
         guest = new Player("");
     }
@@ -34,16 +36,17 @@ public class Casino {
                 break;
             case 2:
                 Slots slots = new Slots(guest);
-                slots.
+                slots.slotsEngine();
                 break;
             case 3:
-
+                BlackJack blackjack = new BlackJack(guest);
+                blackjack.playBlackJack();
                 break;
             case 4:
-
+                host.tellJoke();
                 break;
             default:
-
+                System.out.println("Not a valid option");
                 break;
         }
     }
