@@ -40,7 +40,7 @@ public class Host {
     public int askWhatGame() {
         Scanner scan = new Scanner(System.in);
         System.out.println("'What game number would you like to play or hear my latest joke, human?'\n" +
-                "1. BLIP BLORP    2. SLOGGATS    3. J'AROBAK    4. JOKE     5. SHOW LORPS     ");
+                "1. BLIP BLORP    2. SLOGGATS    3. J'AROBAK    4. JOKE     5. SHOW LORPS 6. GIFT SHOP    ");
         int game = scan.nextInt();
         return game;
     }

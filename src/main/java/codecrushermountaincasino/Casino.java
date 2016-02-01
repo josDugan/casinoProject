@@ -53,7 +53,7 @@ public class Casino {
                 host.showMoney(guest);
                 break;
             case 6:
-                //new Giftshop(guest);
+                new GiftShop(guest);
                 break;
             default:
                 System.out.println("'Don't waste my time. Choose a valid option.'");
