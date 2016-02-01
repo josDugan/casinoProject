@@ -17,18 +17,18 @@ public class PokerGame extends CardGame {
     Scanner scan;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException  {
         PokerGame game = new PokerGame(new Player("OgNarf"));
     }
 
-    public PokerGame(Player player) {
+    public PokerGame(Player player) throws InterruptedException {
         super(player);
         scan = new Scanner(System.in);
         playerHands = new Hand[numPlayers];
         playPoker();
     }
 
-    public void playPoker() {
+    public void playPoker() throws InterruptedException {
 
 
 
@@ -52,10 +52,9 @@ public class PokerGame extends CardGame {
             printHand(playerHands[0].getHand());
 
             // delay the processing a bit
-            try {
+
                 TimeUnit.MILLISECONDS.sleep(1000);
-            } catch (InterruptedException e) {
-            }
+
 
             System.out.println("You gonna fold or play?");
 
@@ -70,10 +69,9 @@ public class PokerGame extends CardGame {
             bet();
 
             System.out.println("You wanna discard?");
-            try {
-                TimeUnit.MILLISECONDS.sleep(1000);
-            } catch (InterruptedException e) {
-            }
+
+                TimeUnit.MILLISECONDS.sleep(500);
+
             printHand(playerHands[0].getHand());
             String yesOrNo = isValidYesNoDiscard(scan.nextLine());
             if(yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("y")){
@@ -83,11 +81,12 @@ public class PokerGame extends CardGame {
                     int temp = Integer.parseInt(discard[i]);
                     playerHands[0].discardAndReplace(temp - 1, deck.dealCardOffTop());
                 }
-                try {
-                    TimeUnit.MILLISECONDS.sleep(1000);
-                } catch (InterruptedException e) {
-                }
+
+                    TimeUnit.MILLISECONDS.sleep(500);
+
+                System.out.println("I'm gonna discard " + (int)(Math.random()*6)+ " cards.");
                 sortHand(playerHands[0]);
+                TimeUnit.MILLISECONDS.sleep(1000);
                 System.out.println("Your new hand is: ");
                 printHand(playerHands[0].getHand());
                bet();
@@ -96,17 +95,15 @@ public class PokerGame extends CardGame {
             /*sortHand(playerHands[0]);
             System.out.println("Your hand is:");
             printHand(playerHands[0].getHand());*/
-            try {
+
                 TimeUnit.MILLISECONDS.sleep(1000);
-            } catch (InterruptedException e) {
-            }
+
             System.out.println("My hand is:");
             printHand(playerHands[1].getHand());
 
-            try {
+
                 TimeUnit.MILLISECONDS.sleep(1000);
-            } catch (InterruptedException e) {
-            }
+
             if (compareHand(playerHands).getId() == 0) {
                 System.out.println("You win, here.... worthless human... " + "+" + (pot) + " lorps.");
             } else {
