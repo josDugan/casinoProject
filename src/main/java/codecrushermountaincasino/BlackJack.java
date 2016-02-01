@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class BlackJack extends CardGame{
     private Hand playerHand;
     private Hand computerHand;
+    //private Art art = new Art();
     private final static HashMap<Card.Rank, Integer> SCORING_GUIDE = new HashMap<Card.Rank, Integer>();
 
     // populates the scoring guide
@@ -177,13 +178,13 @@ public class BlackJack extends CardGame{
     }
 
     // for user game testing
-/*
+
     public static void main(String[] arg) {
         BlackJack game = new BlackJack(new Player("joe"));
         game.playBlackJack();
     }
 
-*/
+
 }
 
 

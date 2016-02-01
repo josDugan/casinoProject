@@ -4,8 +4,8 @@ package codecrushermountaincasino;
  * Created by lucky on 2/1/16.
  */
 public class Test {
-    public final static String[]
 
+/*
     ACE_OF_CLUBS = new String[]{
 
             " _________________ ",
@@ -26,7 +26,7 @@ public class Test {
             
     };
 
-    public final static String[]
+
 
             ACE_OF_DIAMONDS = new String[]{
 
@@ -49,7 +49,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             ACE_OF_HEARTS = new String[]{
 
@@ -73,7 +73,7 @@ public class Test {
     };
 
 
-    public final static String[]
+
 
             ACE_OF_SPADES = new String[]{
 
@@ -97,7 +97,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             JACK_OF_CLUBS = new String[]{
 
@@ -122,7 +122,7 @@ public class Test {
     };
 
 
-    public final static String[]
+
 
             JACK_OF_DIAMONDS = new String[]{
 
@@ -147,7 +147,7 @@ public class Test {
     };
 
 
-    public final static String[]
+
 
             JACK_OF_HEARTS = new String[]{
 
@@ -172,7 +172,7 @@ public class Test {
     };
 
 
-    public final static String[]
+
 
             JACK_OF_SPADES = new String[]{
 
@@ -197,7 +197,7 @@ public class Test {
     };
 
 
-    public final static String[]
+
 
                 KING_OF_CLUBS = new String[]{
 
@@ -221,7 +221,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             KING_OF_DIAMONDS = new String[]{
 
@@ -247,7 +247,7 @@ public class Test {
         };
 
 
-    public final static String[]
+
 
             KING_OF_HEARTS = new String[]{
 
@@ -273,7 +273,7 @@ public class Test {
         };
 
 
-    public final static String[]
+
 
             KING_OF_SPADES = new String[]{
 
@@ -299,7 +299,7 @@ public class Test {
         };
 
 
-    public final static String[]
+
 
             QUEEN_OF_CLUBS = new String[]{
 
@@ -325,7 +325,7 @@ public class Test {
         };
 
 
-    public final static String[]
+
 
             QUEEN_OF_SPADES = new String[]{
 
@@ -349,7 +349,7 @@ public class Test {
 };
 
 
-    public final static String[]
+
 
             QUEEN_OF_DIAMONDS = new String[]{
 
@@ -368,13 +368,12 @@ public class Test {
         "|  /\\             |",
         "|  \\/           O |",
         "|_________________|",
-        ,
 
 
 
     };
 
-    public final static String[]
+
 
             QUEEN_OF_HEARTS = new String[]{
 
@@ -400,7 +399,7 @@ public class Test {
         };
 
 
-    public final static String[]
+
 
             EIGHT_OF_CLUBS = new String[]{
 
@@ -423,7 +422,7 @@ public class Test {
 
         };
 
-    public final static String[]
+
 
             EIGHT_OF_DIAMONDS = new String[]{
 
@@ -447,7 +446,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
         EIGHT_OF_HEARTS = new String[]{
 
@@ -470,7 +469,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
         EIGHT_OF_SPADES = new String[]{
 
@@ -494,7 +493,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FIVE_OF_CLUBS = new String[]{
 
@@ -518,7 +517,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FIVE_OF_DIAMONDS = new String[]{
 
@@ -542,7 +541,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FIVE_OF_HEARTS = new String[]{
 
@@ -566,7 +565,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FIVE_OF_SPADES = new String[]{
 
@@ -590,7 +589,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FOUR_OF_CLUBS = new String[]{
 
@@ -614,7 +613,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FOUR_OF_DIAMONDS = new String[]{
 
@@ -638,7 +637,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FOUR_OF_HEARTS = new String[]{
 
@@ -662,7 +661,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             FOUR_OF_SPADES = new String[]{
 
@@ -686,7 +685,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             NINE_OF_CLUBS = new String[]{
 
@@ -710,7 +709,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             NINE_OF_DIAMONDS = new String[]{
 
@@ -734,7 +733,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             NINE_OF_HEARTS = new String[]{
 
@@ -758,7 +757,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             NINE_OF_SPADES = new String[]{
 
@@ -782,7 +781,6 @@ public class Test {
 
     };
 
-    public final static String[]
 
             SEVEN_OF_CLUBS = new String[]{
 
@@ -806,7 +804,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SEVEN_OF_DIAMONDS = new String[]{
 
@@ -830,7 +828,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SEVEN_OF_HEARTS = new String[]{
 
@@ -854,7 +852,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SEVEN_OF_SPADES = new String[]{
 
@@ -878,7 +876,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SIX_OF_CLUBS= new String[]{
 
@@ -902,7 +900,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SIX_OF_DIAMONDS = new String[]{
 
@@ -926,7 +924,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SIX_OF_HEARTS = new String[]{
 
@@ -950,7 +948,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             SIX_OF_SPADES = new String[]{
 
@@ -974,7 +972,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             TEN_OF_CLUBS = new String[]{
 
@@ -998,7 +996,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             TEN_OF_DIAMONDS = new String[]{
 
@@ -1022,7 +1020,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             TEN_OF_HEARTS = new String[]{
 
@@ -1046,7 +1044,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             TEN_OF_SPADES = new String[]{
 
@@ -1070,7 +1068,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             THREE_OF_CLUBS = new String[]{
 
@@ -1094,7 +1092,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             THREE_OF_DIAMONDS = new String[]{
 
@@ -1118,7 +1116,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             THREE_OF_HEARTS = new String[]{
 
@@ -1142,7 +1140,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             THREE_OF_SPADES = new String[]{
 
@@ -1166,7 +1164,7 @@ public class Test {
 
     };
 
-    public final static String[]
+
 
             TWO_OF_CLUBS = new String[]{
 
@@ -1191,7 +1189,7 @@ public class Test {
     };
 
 
-public final static String[]
+
 
         TWO_OF_HEARTS = new String[]{
 
@@ -1214,7 +1212,7 @@ public final static String[]
 
 
         };
-public final static String[]
+
 
         TWO_OF_DIAMONDS = new String[]{
 
@@ -1238,7 +1236,7 @@ public final static String[]
 
         };
 
-public final static String[]
+
 
         TWO_OF_SPADES = new String[]{
 
@@ -1262,5 +1260,5 @@ public final static String[]
 
         };
     
-
+*/
 }

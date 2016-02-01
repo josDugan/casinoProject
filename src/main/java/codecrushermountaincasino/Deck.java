@@ -10,14 +10,11 @@ import java.util.Collections;
  */
 public class Deck {
     private ArrayList<Card> deck;
-    private ArrayList<String> cardArtKeys;
     private int cardCount;
     private static final int DECK_SIZE = 52;
 
     public Deck(){
-        cardArtKeys = new ArrayList<String>();
         fillDeck();
-        cardArtKeys = fillCardArtKeys();
         shuffle();
 
     }
@@ -40,9 +37,7 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-    public ArrayList<String> getCardArtKeys() {
-        return cardArtKeys;
-    }
+
 
     public int getCardCount(){
         return cardCount;
@@ -92,9 +87,7 @@ public class Deck {
         System.out.println(this);
     }
 
-    private ArrayList<String> fillCardArtKeys() {
-        return null;
-    }
+
 
 /*
     public static void main(String[] args) {

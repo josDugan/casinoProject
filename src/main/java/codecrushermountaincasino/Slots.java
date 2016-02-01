@@ -83,7 +83,7 @@ public class Slots extends Game {
     }
 
     public void printSlots() {
-        art.processASCIIArt(art.loadPaylineArt(payLine));
+        art.processASCIIArt(art.loadPaylineArt(payLine), Art.SLOT_ART_ARRAY_LENGTH);
     }
 
     /* Old print and toString method
@@ -101,11 +101,11 @@ public class Slots extends Game {
     }*/
 
     // for game testing purposes
-/*
+
     public static void main(String[] args) {
 
         Player player = new Player("jangles");
         Slots slots = new Slots(player);
     }
-*/
+
 }
