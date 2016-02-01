@@ -38,17 +38,22 @@ public class Casino {
 
         switch (gameChoice) {
             case 1:
-                PokerGame poker = new PokerGame(guest);
+                new PokerGame(guest);
                 break;
             case 2:
-                Slots slots = new Slots(guest);
+                new Slots(guest);
                 break;
             case 3:
-                BlackJack blackjack = new BlackJack(guest);
-                blackjack.playBlackJack();
+                new BlackJack(guest);
                 break;
             case 4:
                 host.tellJoke();
+                break;
+            case 5:
+                host.showMoney(guest);
+                break;
+            case 6:
+                //new Giftshop(guest);
                 break;
             default:
                 System.out.println("'Don't waste my time. Choose a valid option.'");
@@ -59,5 +64,7 @@ public class Casino {
     public String getName() {
         return name;
     }
+
+
 
 }

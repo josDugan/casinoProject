@@ -8,6 +8,7 @@ public class Player {
     private int chips;
     private int score;
 
+
     public Player(String name) {
         this.name = name;
         chips = 100;
@@ -68,4 +69,6 @@ public class Player {
     public void print() {
         System.out.println(this);
     }
+
+
 }

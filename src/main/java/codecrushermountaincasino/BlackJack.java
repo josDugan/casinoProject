@@ -29,6 +29,7 @@ public class BlackJack extends CardGame{
 
         playerHand = new Hand();
         computerHand = new Hand();
+        playBlackJack();
     }
 
 
