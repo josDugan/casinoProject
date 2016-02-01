@@ -10,7 +10,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        chips = 0;
+        chips = 100;
         score = 0;
     }
 

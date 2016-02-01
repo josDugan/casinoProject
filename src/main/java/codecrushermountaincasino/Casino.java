@@ -32,7 +32,7 @@ public class Casino {
         System.out.println("See you later");
     }
 
-    private void chooseGame(){
+    private void chooseGame()  {
         int gameChoice = host.askWhatGame();
 
         switch (gameChoice) {

@@ -62,7 +62,9 @@ public class Card implements Comparable<Card>{
     @Override
     public String toString(){  //regular toString refers to the reference.
 
+
         return rank + "_OF_" + suit + " ";
+
     }
 
     public void showCard(){
