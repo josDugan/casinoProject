@@ -1,7 +1,5 @@
 package codecrushermountaincasino;
 
-import java.util.Comparator;
-
 /**
  * Created by Taylor on 1/30/16.
  */
@@ -51,7 +49,7 @@ public class Card implements Comparable<Card>{
     @Override
     public String toString(){  //regular toString refers to the reference.
 
-        return "rank: " + rank + "suit: " + suit;
+        return rank + " of " + suit + " ";
     }
 
     public void showCard(){

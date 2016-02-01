@@ -51,10 +51,16 @@ public class Hand {
 
     @Override
     public String toString(){
-        return hand.toString();
+        String cardsInHand = "";
+        for (Card card : hand) {
+            cardsInHand += card.toString() + " ";
+        }
+
+        return cardsInHand;
     }
 
     public void showCards(){
+        System.out.println(this);
     }
 
 
