@@ -178,12 +178,12 @@ public class BlackJack extends CardGame{
     }
 
     // for user game testing
-
+/*
     public static void main(String[] arg) {
         BlackJack game = new BlackJack(new Player("joe"));
         game.playBlackJack();
     }
-
+*/
 
 }
 

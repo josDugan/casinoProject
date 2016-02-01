@@ -11,7 +11,7 @@ public class Hand {
     private ArrayList<Card> hand = new ArrayList<Card>();
     private int cardCount;
     private int maxCards;
-    private Art art = new Art();
+    private Art art;
 
     private static int numHands;
     private int id = numHands;
@@ -20,6 +20,7 @@ public class Hand {
 
     public Hand(){
         numHands++;
+        art = new Art();
     }
 
 

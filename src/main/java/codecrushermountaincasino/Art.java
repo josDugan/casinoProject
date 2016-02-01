@@ -1435,6 +1435,8 @@ public class Art {
         cardArt.put("ACE OF CLUBS", ACE_OF_CLUBS);
 
 
+
+
     }
 
 
@@ -1456,15 +1458,11 @@ public class Art {
     }
 
     public ArrayList<String[]> loadCardArt(String[] cards) {
-        System.out.println(Arrays.toString(cards));
-        System.out.println("loadcardart array " + cards.toString());
         ArrayList<String[]> cardArray = new ArrayList<String[]>();
         for (String card : cards) {
-            System.out.println("card" + card);
+
             cardArray.add(cardArt.get(card));
-            System.out.println("card array in loop" + cardArray);
         }
-        System.out.println("cardArray from load card art" + cardArray.toString());
         return cardArray;
     }
 
