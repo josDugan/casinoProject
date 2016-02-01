@@ -10,6 +10,7 @@ public class Card implements Comparable<Card>{
     private int rankAsInt;
     private int suitAsInt;
     private boolean faceUp;
+    private String id;
 
 
     public Card(Rank rank, Suit suit){
@@ -24,7 +25,9 @@ public class Card implements Comparable<Card>{
         rank = Rank.values()[rankAsInt];
         suit =  Suit.values()[suitAsInt];
 
+
     }
+
 
     public Rank getRank(){return rank;}
 
@@ -59,7 +62,7 @@ public class Card implements Comparable<Card>{
     @Override
     public String toString(){  //regular toString refers to the reference.
 
-        return rank + " of " + suit + " ";
+        return rank + "_OF_" + suit + " ";
     }
 
     public void showCard(){

@@ -44,7 +44,7 @@ public class BlackJack extends CardGame{
         int computerTurn = 1;
 
         // set game to play
-        toggleInPlay();
+        setInPlay(true);
         setTurn(playerTurn);
         initialDeal(deck, playerHand, computerHand, computerPlayer);
         boolean computerBusted = false;
@@ -146,7 +146,7 @@ public class BlackJack extends CardGame{
         System.out.println();
         System.out.println(computerPlayer.getName() + "'s score: " + computerPlayer.getScore());
         System.out.println();
-        System.out.print(getPlayer().getName() + "'s Hand: ");
+        System.out.print(computerPlayer.getName() + "'s Hand: ");
         computerHand.showCards();
         System.out.println();
         System.out.println("=========================================================================================");
@@ -177,13 +177,13 @@ public class BlackJack extends CardGame{
     }
 
     // for user game testing
-
+/*
     public static void main(String[] arg) {
         BlackJack game = new BlackJack(new Player("joe"));
         game.playBlackJack();
     }
 
-
+*/
 }
 
 

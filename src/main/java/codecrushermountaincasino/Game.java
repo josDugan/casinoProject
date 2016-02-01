@@ -24,6 +24,9 @@ public class Game {
         return player;
     }
 
+    public void setInPlay(boolean bool) {
+        inPlay = bool;
+    }
 
     public int getTurn() {
         return turn;

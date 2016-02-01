@@ -21,9 +21,15 @@ public class Casino {
         host.giveChips(guest);
 
         // choose game here
-        while (true) {
+        boolean playGames = true;
+        while (playGames) {
             chooseGame();
+            int stay = host.askStayInCasino();
+            if (stay != 1) {
+                playGames = false;
+            }
         }
+        System.out.println("See you later");
     }
 
     private void chooseGame(){
@@ -49,5 +55,10 @@ public class Casino {
                 System.out.println("Not a valid option");
                 break;
         }
+    }
+
+    public static void main(String[] args) {
+        Casino casino = new Casino();
+        casino.letTheGamesBegin();
     }
 }

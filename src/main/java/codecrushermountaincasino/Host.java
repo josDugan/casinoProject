@@ -62,6 +62,14 @@ public class Host {
                 "");
         
     }
+
+    public int askStayInCasino() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Would you like to stay or leave, human?\n" +
+                "1. STAY     2. LEAVE\n");
+        int stay = scan.nextInt();
+        return stay;
+    }
     /*
 
     public static void main(String[] args) {

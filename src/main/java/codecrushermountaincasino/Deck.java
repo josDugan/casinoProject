@@ -20,6 +20,8 @@ public class Deck {
     }
 
     private void fillDeck() {
+
+
         deck = new ArrayList<Card>();
         for (int i = 0; i <= 12; i++) {
             for (int j = 0; j <= 3; j++) {
@@ -71,10 +73,10 @@ public class Deck {
 
     @Override
     public String toString(){
-        String[] deckStrings = new String[cardCount];
-        for(int i = 0; i < cardCount; i++){
+        String[] deckStrings = new String[deck.size()];
+        for(int i = 0; i < deck.size(); i++){
 
-            deckStrings[i] = deck.remove(i).toString(); // set each position of the String array to each single card object
+            deckStrings[i] = deck.get(i).toString(); // set each position of the String array to each single card object
                 //calls card toString method on each card object
 
         }
@@ -85,4 +87,12 @@ public class Deck {
         System.out.println(this);
     }
 
+/*
+    public static void main(String[] args) {
+        Deck deck = new Deck();
+
+        deck.showDeck();
+        deck.showDeck();
+    }
+*/
 }

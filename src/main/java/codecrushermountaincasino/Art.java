@@ -12,8 +12,10 @@ public class Art {
     public final static String[] SATURN;
     public final static String[] LAZERGUN;
     public final static String[] SPACESHIP;
+    public final static String[] QUEEN_OF_DIAMONDS;
     public final static int ARRAY_LENGTH = 13;
     private HashMap<String, String[]> slotArt;
+    private HashMap<String, String[]> cardArt;
 
     static {
         SATURN = new String[]{
@@ -61,11 +63,33 @@ public class Art {
                 "|    `\"`           `\"`    |",
                 "|_________________________|"};
 
+        QUEEN_OF_DIAMONDS = new String[]{
+                " _________________ ",
+                "|                 |",
+                "|  Q          /\\  |",
+                "|             \\/  |",
+                "|    _|\\/\\/|_     |",
+                "|   /oo    oo\\    |",
+                "|  (OOOO  OOOO)   |",
+                "|   \\OOO  OOO/    |",
+                "|    \\  __  /     |",
+                "|     \\.  ,/      |",
+                "|       \'\' o 0 o  |",
+                "|           \\\\|/   |",
+                "|  /\\             |",
+                "|  \\/           O |",
+                "|_________________|",};
+
+
     }
 
     public Art() {
         assignSlotArt();
     }
+
+
+
+
 
     public void assignSlotArt() {
         slotArt = new HashMap<String, String[]>();
