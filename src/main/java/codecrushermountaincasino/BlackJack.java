@@ -29,8 +29,8 @@ public class BlackJack extends CardGame{
 
         playerHand = new Hand();
         computerHand = new Hand();
-
     }
+
 
     public void playBlackJack() {
         System.out.println("Welcome to J'AROBAK!\n");

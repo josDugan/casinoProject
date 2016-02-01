@@ -1,5 +1,6 @@
 package codecrushermountaincasino;
 
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -19,34 +20,53 @@ public class Slots extends Game {
         //assignSlotArt();
         slotsEngine();
 
+
+
     }
 
     public void slotsEngine() {
+        System.out.println("Welcome to\n  ______   __        ______    ______    ______    ______  ________   ______  \n" +
+                " /      \\ |  \\      /      \\  /      \\  /      \\  /      \\|        \\ /      \\ \n" +
+                "|  $$$$$$\\| $$     |  $$$$$$\\|  $$$$$$\\|  $$$$$$\\|  $$$$$$\\\\$$$$$$$$|  $$$$$$\\\n" +
+                "| $$___\\$$| $$     | $$  | $$| $$ __\\$$| $$ __\\$$| $$__| $$  | $$   | $$___\\$$\n" +
+                " \\$$    \\ | $$     | $$  | $$| $$|    \\| $$|    \\| $$    $$  | $$    \\$$    \\ \n" +
+                " _\\$$$$$$\\| $$     | $$  | $$| $$ \\$$$$| $$ \\$$$$| $$$$$$$$  | $$    _\\$$$$$$\\\n" +
+                "|  \\__| $$| $$_____| $$__/ $$| $$__| $$| $$__| $$| $$  | $$  | $$   |  \\__| $$\n" +
+                " \\$$    $$| $$     \\\\$$    $$ \\$$    $$ \\$$    $$| $$  | $$  | $$    \\$$    $$\n" +
+                "  \\$$$$$$  \\$$$$$$$$ \\$$$$$$   \\$$$$$$   \\$$$$$$  \\$$   \\$$   \\$$     \\$$$$$$ \nIt's 5 lorps a round.");
 
         while (getInPlay()) {
 
 
             Scanner scan = new Scanner(System.in);
-            System.out.println("Press 'z' to pull the lever again or press anything else to leave, human.");
-            if(scan.hasNext("z")){
-                pullLever();
-                printSlots();
-                calculateScore();
-            } else {
-                toggleInPlay();
-                System.out.println("Enjoy the rest of your stay, human");
+
+
+            System.out.println("Press 'z' to pull the lever, human.");
+            if (scan.hasNext("z")) {
+                if (player.getChips() >= 5) {
+                    pullLever();
+                    player.removeChips(5);
+                    printSlots();
+                    calculateScore();
+                    System.out.println("You've got " + player.getChips() + " lorps. Amazing.");
+
+                }else if(player.getChips() < 5){
+                    System.out.println("Not enough lorps. Go away.");
+                    toggleInPlay();
+                } else {
+                    toggleInPlay();
+                }
+
             }
 
-            System.out.println("You have " + player.getChips() + " lorps, human");
         }
-
     }
 
     public void pullLever() {
         payLine = new String[3];
         for (int i = 0; i < payLine.length; i++) {
             Integer slotValue = (Integer) (int) (Math.random() * 3);
-            payLine[i] = slotValue.toString(); //payline values are strings.
+            payLine[i] = slotValue.toString(); //payline values are strings. Integers toString method
 
         }
     }
@@ -56,12 +76,12 @@ public class Slots extends Game {
         Player player = getPlayer();
         for(int i = 0; i < payLine.length; i++){
             if(firstPos.equals(payLine[1]) && firstPos.equals(payLine[2])) {
-                player.addChips(100);
-                System.out.println("You won 100 lorps.");
+                player.addChips(50);
+                System.out.println("You won 50 lorps.");
                 break;
-            }else if(firstPos.equals(payLine[1]) || firstPos.equals(payLine[2])){
-                player.addChips(20);
-                System.out.println("You won 20 lorps.");
+            }else if(firstPos.equals(payLine[1])) {
+                player.addChips(15);
+                System.out.println("You won 15 lorps.");
                 break;
             } else {
                 player.addChips(0);
@@ -100,12 +120,7 @@ public class Slots extends Game {
         System.out.println(this); //System out finds toString method.
     }*/
 
-    // for game testing purposes
 
-    public static void main(String[] args) {
 
-        Player player = new Player("jangles");
-        Slots slots = new Slots(player);
-    }
 
 }
