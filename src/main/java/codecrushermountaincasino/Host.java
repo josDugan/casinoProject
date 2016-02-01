@@ -6,13 +6,14 @@ import java.util.Scanner;
  * Created by Taylor on 1/30/16.
  */
 public class Host {
+
     public Host() {
 
     }
 
     public void greet() {
         System.out.println("It's 2000 years in the future. You are an adventuring gambler with a chip on\n" +
-                " your shoulder. You're  You've had it\n" +
+                " your shoulder. You've had it\n" +
                 "with the same old casinos on Earth. You used your previous winnings to buy a\n" +
                 "universal translator helmet and catch a spaceship to the planet K'aynzara.\n" +
                 " The journey was long and tumultuous, but you decide it's all worth it when \n" +
@@ -38,8 +39,8 @@ public class Host {
 
     public int askWhatGame() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("'What game number would you like to play, human?'\n" +
-                "1. PLORGNAR    2. SLOGGATS    3. J'AROBAK ");
+        System.out.println("'What game number would you like to play or hear my latest joke, human?'\n" +
+                "1. PLORGNAR    2. SLOGGATS    3. J'AROBAK    4. JOKE ");
         int game = scan.nextInt();
         return game;
     }

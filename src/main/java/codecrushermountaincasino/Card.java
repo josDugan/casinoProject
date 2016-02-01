@@ -9,11 +9,13 @@ public class Card implements Comparable<Card>{
     private Suit suit;
     private int rankAsInt;
     private int suitAsInt;
+    private boolean faceUp;
 
 
     public Card(Rank rank, Suit suit){
         setRank(rank);
         setSuit(suit);
+        faceUp = true;
 
     }
 
@@ -36,6 +38,14 @@ public class Card implements Comparable<Card>{
 
     public int getSuitAsInt(){
         return suitAsInt;
+    }
+
+    public boolean getFaceUp() {
+        return faceUp;
+    }
+
+    public void flipCard() {
+        faceUp = !faceUp;
     }
 
     public void setRank(Rank rank){

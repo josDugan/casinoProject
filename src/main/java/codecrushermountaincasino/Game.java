@@ -4,14 +4,16 @@ package codecrushermountaincasino;
  * Created by Taylor on 1/30/16.
  */
 public class Game {
-    private boolean inPlay= true;
+
+    private boolean inPlay = true;
+
     protected Player player;
     private int turn;
 
     public Game(Player player) {
 
         this.player = player;
-        inPlay = false;
+        inPlay = true;
     }
 
     public boolean getInPlay() {
@@ -21,6 +23,7 @@ public class Game {
     public Player getPlayer() {
         return player;
     }
+
 
     public int getTurn() {
         return turn;
@@ -32,7 +35,10 @@ public class Game {
 
     public void toggleInPlay() {
         inPlay = !inPlay;
+
     }
+
+
 
     public void payout(int amount, Player winner) {
         winner.addChips(amount);

@@ -26,8 +26,10 @@ public class BlackJack extends CardGame{
 
     public BlackJack(Player player) {
         super(player);
+
         playerHand = new Hand();
         computerHand = new Hand();
+
     }
 
     public void playBlackJack() {
@@ -123,9 +125,11 @@ public class BlackJack extends CardGame{
     }
 
 
+
     private void hit(Hand hand) {
         hand.addCard(getDeck().dealCardOffTop());
     }
+
 
     private void stand() {
         setTurn(getTurn() * -1);

@@ -34,6 +34,8 @@ public class Player {
         this.score = score;
     }
 
+    public void setName(String name) {this.name = name;}
+
 
 
     public int addChips(int newChipValue) {
